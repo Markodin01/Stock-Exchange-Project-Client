@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ApiService {
-  private baseUrl = 'http://localhost:8888';
+  private baseUrl = 'https://nbp-api.uhddbtuebceh6.eu-west-2.cs.amazonlightsail.com';
 
   constructor(private http: HttpClient) { }
 
