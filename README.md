@@ -1,27 +1,50 @@
-# ClientNbp
+Project Name - Angular Client
+=============================
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+This is the Angular client for the project NBP Client. This client allows users to interact with the server and perform various operations.
 
-## Development server
+Features
+--------
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+-   Users can get the average exchange rate of a currency for a specific date.
+-   Users can get the maximum and minimum exchange rates for a currency over a period of time.
+-   Users can get the largest difference between exchange rates for a currency over a period of time.
 
-## Code scaffolding
+Getting Started
+---------------
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Prerequisites
 
-## Build
+-   Node.js
+-   Angular CLI
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+### Installation
 
-## Running unit tests
+1.  Clone the repository
+2.  Run `npm install` to install dependencies
+3.  Run `ng serve` to start the development server
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Usage
 
-## Running end-to-end tests
+The client is accessible through a web browser at <http://localhost:4200/> after starting the development server.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Folder Structure
+----------------
 
-## Further help
+-   `src/` contains the source code for the client
+-   `src/app/` contains the components and services for the client
+-   `src/app/components/` contains the UI components for the client
+-   `src/app/services/` contains the services for interacting with the server
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+License
+-------
+
+This project is part of an interview application process.
+
+## Testing
+
+In order to run the integration tests go to the root folder, run the `ng serve` and use `testcafe --skip-js-errors chrome integration_test/general_tests.ts` command
+
+## Deployment
+
+The application is deployed and can be access on this webpage `http://nbp-client.s3-website.eu-west-2.amazonaws.com`
