@@ -23,6 +23,7 @@
     "@ng-bootstrap/ng-bootstrap": "^14.1.0",
     "eslint-import-resolver-typescript": "^3.5.5",
     "rxjs": "~7.8.0",
+    "testcafe": "^2.5.1-rc.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
   },
