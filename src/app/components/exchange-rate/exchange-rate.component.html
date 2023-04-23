@@ -1,14 +1,29 @@
 <h1>NBP Exchanges Service</h1>
 <form>
-  <label>Currency:</label>
-  <input type="text" [(ngModel)]="currency" name="currency">
+  <label for="currency">Select a currency:</label>
+  <select id="currency" name="currency" [(ngModel)]="selectedCurrency">
+    <option *ngFor="let currency of currencies" [value]="currency">{{currency}}</option>
+  </select>
+
   <br><br>
   <label>Date:</label>
-  <input type="date" [(ngModel)]="date" name="date">
-  <br><br>
+  <mat-form-field>
+    <input matInput [matDatepicker]="picker" [(ngModel)]="date" name="date" id="date" [matDatepickerFilter]="weekdayFilter">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+    <br><br>
+
+
   <label>Number of Records:</label>
-  <input type="number" [(ngModel)]="number" name="number"/>
-  <div *ngIf="numberFormControl.errors?.['range']">Number should be between 1 and 255</div>
+  <input [(ngModel)]="numberSelected" [formControl]="numberFormControl" name="numberSelected"/>
+<div *ngIf="numberFormControl.invalid && (numberFormControl.dirty || numberFormControl.touched)">
+  <div *ngIf="numberFormControl.errors?.['required']">Number is required for "Get Min Max" and "Get Major Difference".</div>
+  <div *ngIf="numberFormControl.errors?.['min']">Number should be greater than or equal to 1.</div>
+  <div *ngIf="numberFormControl.errors?.['max']">Number should be less than or equal to 255.</div>
+</div>
+
+
   <br><br>
   <button type="button" (click)="getExchangeRate()">Get Average Rate</button>
   <button type="button" (click)="getMinMax()">Get Max Min Average</button>
